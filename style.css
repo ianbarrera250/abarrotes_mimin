@@ -1,254 +1,359 @@
-/* Paleta de colores: Tiendita Mexicana Patrocinada por Coca-Cola */
+/* Paleta de colores: Diseño Profesional y Moderno */
 :root {
-    --bg-sitio: #f8f9fa;
-    --rojo-coca: #df0000; /* El rojo oficial brillante */
+    --bg-sitio: #f4f6f8;
+    --rojo-coca: #e50000;
     --rojo-oscuro: #b30000;
     --blanco: #ffffff;
-    --texto-oscuro: #1a1a1a;
-    --texto-mutado: #757575;
-    --borde: #e0e0e0;
-    --amarillo-oferta: #ffcc00; /* El clásico color de cartulina de ofertas */
+    --texto-oscuro: #2c3e50;
+    --texto-mutado: #7f8c8d;
+    --borde: #eaeaea;
+    --sombra: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --sombra-hover: 0 10px 15px rgba(0, 0, 0, 0.1);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial Black', 'Impact', sans-serif; /* Tipografías gruesas tipo letrero */
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; 
 }
 
 body {
     background-color: var(--bg-sitio);
     color: var(--texto-oscuro);
-    padding-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* Letrero Principal de la Fachada (Navbar) */
+/* Header Profesional */
 .fachada-letrero {
-    background-color: var(--rojo-coca);
-    color: var(--blanco);
-    padding: 20px 30px;
+    background-color: var(--blanco);
+    padding: 15px 30px;
     text-align: center;
-    border-bottom: 8px solid var(--texto-oscuro); /* Línea negra clásica de marcos */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    border-bottom: 1px solid var(--borde);
+    box-shadow: var(--sombra);
 }
 
 .fachada-titulo {
-    font-size: 32px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-shadow: 2px 2px 0px #000;
-}
-
-.fachada-titulo span {
-    font-family: 'Brush Script MT', 'cursive', sans-serif; /* Simula la letra cursiva de Coca-Cola */
-    color: var(--blanco);
-    text-transform: none;
-    font-size: 40px;
-    margin-left: 10px;
-}
-
-/* Barra de botones debajo del letrero */
-.menu-tienda {
-    background-color: var(--texto-oscuro);
-    padding: 10px;
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--texto-oscuro);
     display: flex;
+    align-items: center;
     justify-content: center;
     gap: 15px;
+}
+
+.logo-header {
+    height: 35px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    background-color: var(--rojo-coca);
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+/* Navegación */
+.menu-tienda {
+    background-color: var(--rojo-coca);
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
 .menu-tienda a {
     color: var(--blanco);
     text-decoration: none;
-    font-family: 'Segoe UI', sans-serif;
-    font-weight: 700;
-    font-size: 14px;
-    padding: 6px 15px;
-    border: 2px solid var(--blanco);
-    border-radius: 4px;
-    transition: all 0.2s;
+    font-weight: 500;
+    font-size: 15px;
+    padding: 8px 20px;
+    border-radius: 20px;
+    transition: background 0.3s ease;
 }
 
 .menu-tienda a:hover {
-    background-color: var(--rojo-coca);
-    border-color: var(--rojo-coca);
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Contenedor del mostrador */
-.mostrador {
+/* HERO BANNER */
+.hero-banner {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1601599965158-b61546731d10?w=1600&q=80') center/cover;
+    color: var(--blanco);
+    text-align: center;
+    padding: 60px 20px;
+    margin-bottom: 30px;
+}
+
+.hero-content h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+/* CONTENEDOR PRINCIPAL - Centrado y ancho completo */
+.contenedor-principal {
     max-width: 1200px;
-    margin: 30px auto;
+    width: 100%;
+    margin: 0 auto 40px auto;
     padding: 0 20px;
-    font-family: 'Segoe UI', sans-serif;
+    flex-grow: 1;
+}
+
+/* MOSTRADOR Y GRID */
+.header-mostrador {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--rojo-coca);
+    flex-wrap: wrap; /* Para pantallas pequeñas */
+    gap: 15px;
 }
 
 .seccion-letrero {
-    font-size: 22px;
-    color: var(--rojo-coca);
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    border-bottom: 3px solid var(--rojo-coca);
-    padding-bottom: 5px;
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--texto-oscuro);
 }
 
-/* Rejilla de Productos (Estilo Estantería) */
+/* MENU EN LA ESQUINA */
+.menu-esquina {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.menu-esquina label {
+    font-weight: 600;
+    color: var(--texto-mutado);
+    font-size: 14px;
+}
+
+.menu-esquina select {
+    padding: 8px 15px;
+    border: 1px solid var(--borde);
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: var(--blanco);
+    color: var(--texto-oscuro);
+    outline: none;
+    cursor: pointer;
+    box-shadow: var(--sombra);
+    transition: border-color 0.2s;
+}
+
+.menu-esquina select:focus {
+    border-color: var(--rojo-coca);
+}
+
+/* EL TRUCO PARA LA CUADRÍCULA LADO A LADO */
 .estanteria-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    /* Al bajar este número a 220px garantizamos que entren de 3 a 5 tarjetas por fila */
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 20px;
 }
 
-/* Tarjeta de Producto (Estilo Envase / Exhibidor Blanco y Rojo) */
+/* TARJETA DE PRODUCTO */
 .producto-tarjeta {
     background-color: var(--blanco);
-    border: 2px solid var(--borde);
-    border-top: 6px solid var(--rojo-coca); /* Detalle superior rojo */
-    border-radius: 8px;
-    padding: 20px;
+    border-radius: 12px;
+    padding: 18px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: transform 0.2s, border-color 0.2s;
+    box-shadow: var(--sombra);
+    border: 1px solid var(--borde);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .producto-tarjeta:hover {
-    transform: scale(1.02);
-    border-color: var(--rojo-coca);
+    transform: translateY(-5px);
+    box-shadow: var(--sombra-hover);
+    border-color: #ffcccc;
+}
+
+.tarjeta-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
 }
 
 .producto-categoria {
     font-size: 11px;
-    background-color: #f1f1f1;
-    color: #555;
-    padding: 3px 8px;
+    background-color: #f1f2f6;
+    color: #57606f;
+    padding: 4px 8px;
     font-weight: 700;
-    align-self: flex-start;
-    border-radius: 4px;
-    margin-bottom: 10px;
+    border-radius: 6px;
+    text-transform: uppercase;
 }
 
-.producto-icono {
-    font-size: 45px;
-    text-align: center;
-    margin: 10px 0;
-    color: var(--rojo-coca);
+.producto-stock {
+    font-size: 11px;
+    color: #27ae60;
+    font-weight: 700;
+    background-color: #e8f8f5;
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+
+.producto-img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.producto-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .producto-marca {
     font-size: 12px;
-    font-weight: 800;
+    font-weight: 600;
     color: var(--texto-mutado);
     text-transform: uppercase;
 }
 
 .producto-nombre {
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 700;
     color: var(--texto-oscuro);
-    margin-bottom: 10px;
-    font-family: 'Segoe UI', sans-serif;
+    margin: 4px 0 15px 0;
+    line-height: 1.2;
+    flex-grow: 1;
 }
 
-/* El precio parece letrero de cartulina mexicana */
+.contenedor-precio-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
 .producto-precio {
-    font-size: 26px;
-    font-weight: 900;
+    font-size: 22px;
+    font-weight: 800;
     color: var(--rojo-coca);
-    margin-bottom: 5px;
-    font-family: 'Arial Black', sans-serif;
-}
-
-.producto-stock {
-    font-size: 13px;
-    font-weight: 600;
-    color: #2e7d32;
-    margin-bottom: 15px;
 }
 
 .btn-comprar {
-    width: 100%;
     background-color: var(--rojo-coca);
     color: var(--blanco);
     border: none;
-    padding: 10px;
-    font-weight: 700;
-    font-size: 14px;
-    text-transform: uppercase;
-    border-radius: 4px;
+    padding: 8px 16px;
+    font-weight: 600;
+    font-size: 13px;
+    border-radius: 6px;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: background 0.3s ease;
 }
 
 .btn-comprar:hover {
     background-color: var(--rojo-oscuro);
 }
 
-/* Estilos de los Formularios */
-.formulario-caja {
-    max-width: 500px;
-    margin: 40px auto;
-    background: var(--blanco);
-    padding: 30px;
-    border: 2px solid var(--rojo-coca);
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    font-family: 'Segoe UI', sans-serif;
-}
-
-.formulario-caja h2 {
-    color: var(--rojo-coca);
-    font-size: 24px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
+.alerta-vacia {
+    grid-column: 1 / -1;
     text-align: center;
+    padding: 40px;
+    background: var(--blanco);
+    border-radius: 12px;
+    color: var(--texto-mutado);
+    font-size: 18px;
 }
 
-.form-group {
-    margin-bottom: 15px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: 700;
+/* FOOTER */
+.footer-tienda {
+    background-color: var(--texto-oscuro);
+    color: var(--blanco);
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
     font-size: 14px;
 }
 
+/* MODAL Y FORMULARIOS */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(3px);
+}
+
+.modal-content {
+    background-color: var(--blanco);
+    border-radius: 12px;
+    width: 90%;
+    max-width: 420px;
+    padding: 30px;
+    position: relative;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    animation: aparecerModal 0.3s ease-out;
+}
+
+@keyframes aparecerModal {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover { color: var(--rojo-coca); }
+
+.modal h2 { margin-bottom: 15px; font-size: 22px; }
+
+.resumen-pedido {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid var(--borde);
+}
+
+.precio-destacado {
+    color: var(--rojo-coca);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.form-group { margin-bottom: 18px; }
+.form-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 14px; }
 .form-group input, .form-group select {
     width: 100%;
     padding: 10px;
-    border: 1px solid var(--borde);
-    border-radius: 4px;
-    font-size: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
 }
-
 .form-group input:focus, .form-group select:focus {
     outline: none;
     border-color: var(--rojo-coca);
+    box-shadow: 0 0 0 3px rgba(229, 0, 0, 0.1);
 }
-
-.btn-registrar {
-    width: 100%;
-    background-color: var(--rojo-coca);
-    color: var(--blanco);
-    border: none;
-    padding: 12px;
-    font-size: 16px;
-    font-weight: 700;
-    text-transform: uppercase;
-    cursor: pointer;
-    border-radius: 4px;
-}
-
-.btn-registrar:hover {
-    background-color: var(--rojo-oscuro);
-}
-
-.alert {
-    padding: 10px;
-    border-radius: 4px;
-    margin-bottom: 15px;
-    text-align: center;
-    font-weight: 700;
-}
-.alert-success { background-color: #e8f5e9; color: #2e7d32; border: 1px solid #c8e6c9; }
